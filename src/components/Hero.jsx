@@ -7,7 +7,7 @@ import { ArrowUpRight, Send, FileDown } from "lucide-react";
 
 export default function Hero() {
   return (
-    <section id="hero" className="relative flex h-[100dvh] min-h-[720px] w-full flex-col justify-center overflow-hidden px-6 sm:px-10 md:px-14 lg:px-16 xl:px-20 pt-16 lg:pt-0 pb-0">
+    <section id="hero" className="relative flex min-h-[100dvh] w-full flex-col justify-center overflow-hidden px-6 sm:px-10 md:px-14 lg:px-16 xl:px-20 pt-24 sm:pt-28 lg:pt-24 pb-8">
       {/* Background ambient radial lighting */}
       <div
         className="pointer-events-none absolute -top-40 right-0 w-[550px] h-[550px] rounded-full bg-[#D4AF37]/10 dark:bg-[#D4AF37]/15 blur-[140px] -z-10"
@@ -18,9 +18,9 @@ export default function Hero() {
         aria-hidden="true"
       />
 
-      <div className="grid grid-cols-1 lg:grid-cols-12 items-center gap-8 lg:gap-4 w-full max-w-[1550px] mx-auto h-full">
+      <div className="grid grid-cols-1 lg:grid-cols-12 items-center gap-8 lg:gap-4 w-full max-w-[1550px] mx-auto my-auto h-full">
         {/* Left Column: Gold & Black Editorial Typography (No asterisk) */}
-        <div className="lg:col-span-6 xl:col-span-6 flex flex-col items-center lg:items-start text-center lg:text-left justify-center z-10 py-6 lg:py-0">
+        <div className="lg:col-span-6 xl:col-span-6 flex flex-col items-center lg:items-start text-center lg:text-left justify-center z-10 py-4 lg:py-6">
           {/* Top Pill with Gold & Black Typographical Glyphs */}
           <div className="inline-flex items-center gap-2 px-3.5 py-1 mb-4 rounded-full border-2 border-black dark:border-[#D4AF37] bg-[#D4AF37] text-black text-xs font-heading font-black shadow-solid-sm">
             <span>✦</span>
@@ -77,7 +77,7 @@ export default function Hero() {
 
         {/* Right Column: Seamless Cutout Portrait on Metallic Gold Brush Canvas */}
         <div className="lg:col-span-6 xl:col-span-6 flex items-end justify-center lg:justify-end w-full relative z-0 -mt-6 sm:-mt-10 lg:mt-0 h-[48vh] sm:h-[55vh] lg:h-full">
-          <div className="relative flex flex-col items-center lg:items-end justify-end w-full h-full lg:h-[100dvh] select-none">
+          <div className="relative flex flex-col items-center lg:items-end justify-end w-full h-full lg:h-[calc(100dvh-7rem)] select-none">
             {/* Brush background container */}
             <div className="absolute inset-0 z-0 flex items-center justify-center lg:justify-end pointer-events-none scale-100 sm:scale-110 lg:scale-125">
               <BrushStrokes />

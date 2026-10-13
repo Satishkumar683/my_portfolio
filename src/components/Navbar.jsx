@@ -19,12 +19,6 @@ export default function Navbar() {
           <span>satish</span>
         </a>
 
-        {/* Center Pill: Gold & Black Typographical Badge */}
-        <div className="hidden lg:flex items-center gap-2 px-4 py-1.5 rounded-full border-2 border-black dark:border-[#D4AF37] bg-[#D4AF37] text-black text-xs font-heading font-black shadow-solid-sm">
-          <span>✦</span>
-          <span className="tracking-wide uppercase">NIT JAMSHEDPUR CSE</span>
-          <span>✦</span>
-        </div>
 
         {/* Right side controls: Theme toggle + Gold Menu button */}
         <div className="flex items-center gap-3 sm:gap-4">

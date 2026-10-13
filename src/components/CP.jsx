@@ -8,16 +8,16 @@ export default function CP() {
     <section id="cp" className="w-full py-20 md:py-24 px-6 sm:px-10 md:px-14 lg:px-20 max-w-[1550px] mx-auto">
       <div className="flex flex-col md:flex-row items-start md:items-end justify-between mb-12 gap-4">
         <div>
-          <span className="text-xs font-mono font-semibold tracking-widest uppercase text-purple-600 dark:text-purple-400">
-            Competitive Programming
+          <span className="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full border-2 border-black dark:border-[#D4AF37] bg-[#D4AF37] text-black text-xs font-heading font-black shadow-solid-sm uppercase">
+            <span>✦</span> Competitive Programming <span>✦</span>
           </span>
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-display font-extrabold tracking-tight mt-1 text-neutral-900 dark:text-white">
-            Rated Across <span className="text-purple-600 dark:text-purple-400">Global Arenas</span>
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-heading font-extrabold tracking-tight mt-3 text-neutral-900 dark:text-white">
+            Rated Across <span className="text-[#D4AF37] font-editorial italic font-normal">Global Arenas</span>
           </h2>
         </div>
-        <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-purple-500/20 bg-purple-500/5 text-xs font-mono text-purple-600 dark:text-purple-400">
-          <Flame className="w-3.5 h-3.5" />
-          <span>1000+ Algorithmic Problems Solved</span>
+        <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border-2 border-black dark:border-[#D4AF37] bg-[#D4AF37] text-black text-xs font-heading font-black shadow-solid-sm">
+          <Flame className="w-4 h-4 text-black" strokeWidth={2.4} />
+          <span>✦ 1000+ Algorithmic Problems Solved ✦</span>
         </div>
       </div>
 
@@ -28,41 +28,41 @@ export default function CP() {
             href={profile.url}
             target="_blank"
             rel="noopener noreferrer"
-            className="group rounded-[2rem] bg-white dark:bg-[#121217] border border-neutral-200/80 dark:border-neutral-800/80 p-6 shadow-md hover:border-purple-500 hover:shadow-xl hover:shadow-purple-500/10 hover:-translate-y-1 transition-all flex flex-col justify-between"
+            className="group rounded-3xl bg-white dark:bg-[#050505] border-2 border-black dark:border-[#D4AF37]/40 p-6 shadow-solid hover:-translate-y-1 hover:shadow-solid-lg transition-all flex flex-col justify-between"
           >
             <div>
               <div className="flex items-center justify-between mb-4">
-                <span className="font-bold text-base text-neutral-900 dark:text-white group-hover:text-purple-600 dark:group-hover:text-purple-400 transition-colors tracking-tight">
+                <span className="font-heading font-extrabold text-base text-neutral-900 dark:text-white group-hover:text-[#D4AF37] transition-colors tracking-tight">
                   {profile.platform}
                 </span>
-                <span className="text-xs font-mono text-neutral-400">@{profile.handle}</span>
+                <span className="text-xs font-heading font-semibold text-neutral-500">@{profile.handle}</span>
               </div>
 
               {/* Rating Display */}
-              <div className="my-5 p-4 rounded-2xl bg-neutral-50 dark:bg-neutral-900/80 text-center border border-neutral-200/60 dark:border-neutral-800/60">
-                <div className="text-3xl font-display font-extrabold text-neutral-900 dark:text-white tracking-tight">
+              <div className="my-5 p-4 rounded-2xl bg-[#fdfdfd] dark:bg-[#0a0a0a] text-center border-2 border-black/80 dark:border-[#D4AF37]/40 shadow-solid-sm">
+                <div className="text-3xl font-editorial font-black text-[#D4AF37] tracking-tight">
                   {profile.rating}
                 </div>
-                <div className="text-[10px] uppercase tracking-wider text-neutral-500 font-mono mt-0.5">
-                  Rating
+                <div className="text-[10px] uppercase tracking-wider text-neutral-500 font-heading font-bold mt-0.5">
+                  Live Rating
                 </div>
               </div>
 
               {/* Rank Badge */}
               <div className="flex justify-center mb-4">
-                <span className={`px-3 py-1 rounded-full text-xs font-bold border font-mono ${profile.badgeColor}`}>
+                <span className="px-3.5 py-1 rounded-full text-xs font-heading font-black border-2 border-black dark:border-[#D4AF37] bg-[#D4AF37] text-black shadow-solid-sm">
                   {profile.rank}
                 </span>
               </div>
 
-              <p className="text-xs text-neutral-500 text-center leading-relaxed">
+              <p className="text-xs text-neutral-600 dark:text-neutral-400 text-center leading-relaxed font-sans">
                 {profile.stats}
               </p>
             </div>
 
-            <div className="mt-6 pt-4 border-t border-neutral-100 dark:border-neutral-800 flex items-center justify-center gap-1.5 text-xs font-bold uppercase tracking-wider text-purple-600 dark:text-purple-400 group-hover:gap-2 transition-all">
+            <div className="mt-6 pt-3 border-t-2 border-black/10 dark:border-[#D4AF37]/20 flex items-center justify-center gap-1.5 text-xs font-heading font-bold text-neutral-700 dark:text-neutral-300 group-hover:text-[#D4AF37] transition-colors">
               <span>View Profile</span>
-              <ExternalLink className="w-3.5 h-3.5" />
+              <ExternalLink className="w-3.5 h-3.5" strokeWidth={2.2} />
             </div>
           </a>
         ))}

@@ -38,21 +38,21 @@ export default function EyeFollow() {
   return (
     <div
       ref={containerRef}
-      className="inline-flex items-center select-none cursor-default drop-shadow-xl"
+      className="inline-flex items-center select-none cursor-default drop-shadow-[0_4px_0_#000000] dark:drop-shadow-[0_4px_0_#D4AF37]"
       title="Looking forward to building impactful systems!"
     >
       <svg className="h-16 w-16 sm:h-20 sm:w-20 -mr-3" viewBox="0 0 100 100" fill="none">
-        <circle cx="50" cy="50" r="46" fill="#f4f4f5" stroke="#27272a" strokeWidth="3" />
+        <circle cx="50" cy="50" r="45" fill="#ffffff" stroke="#000000" strokeWidth="4" />
         <g ref={leftPupilRef} style={{ transition: "transform 0.08s ease-out" }}>
-          <circle cx="50" cy="50" r="20" fill="#18181b" />
-          <circle cx="56" cy="42" r="5" fill="#ffffff" />
+          <circle cx="50" cy="50" r="20" fill="#000000" />
+          <circle cx="56" cy="42" r="6" fill="#D4AF37" />
         </g>
       </svg>
       <svg className="h-16 w-16 sm:h-20 sm:w-20" viewBox="0 0 100 100" fill="none">
-        <circle cx="50" cy="50" r="46" fill="#f4f4f5" stroke="#27272a" strokeWidth="3" />
+        <circle cx="50" cy="50" r="45" fill="#ffffff" stroke="#000000" strokeWidth="4" />
         <g ref={rightPupilRef} style={{ transition: "transform 0.08s ease-out" }}>
-          <circle cx="50" cy="50" r="20" fill="#18181b" />
-          <circle cx="56" cy="42" r="5" fill="#ffffff" />
+          <circle cx="50" cy="50" r="20" fill="#000000" />
+          <circle cx="56" cy="42" r="6" fill="#D4AF37" />
         </g>
       </svg>
     </div>

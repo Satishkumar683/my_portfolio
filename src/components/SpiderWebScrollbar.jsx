@@ -237,7 +237,7 @@ export default function SpiderWebScrollbar() {
         return {
           main: isDark ? "rgba(255, 255, 255, 0.55)" : "rgba(0, 0, 0, 0.55)",
           light: isDark ? "rgba(255, 255, 255, 0.2)" : "rgba(0, 0, 0, 0.2)",
-          glow: isDark ? "rgba(255, 80, 80, 0.8)" : "rgba(220, 38, 38, 0.8)",
+          glow: isDark ? "rgba(245, 208, 97, 0.9)" : "rgba(212, 175, 55, 0.9)",
         };
       };
 

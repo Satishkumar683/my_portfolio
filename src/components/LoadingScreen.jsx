@@ -9,11 +9,11 @@ export default function LoadingScreen() {
   useEffect(() => {
     const timer1 = setTimeout(() => {
       setFading(true);
-    }, 1300);
+    }, 1200);
 
     const timer2 = setTimeout(() => {
       setLoading(false);
-    }, 1700);
+    }, 1600);
 
     return () => {
       clearTimeout(timer1);
@@ -25,60 +25,31 @@ export default function LoadingScreen() {
 
   return (
     <div
-      className={`fixed inset-0 z-[99999] flex flex-col items-center justify-center bg-neutral-950 text-white transition-opacity duration-500 ${
+      className={`fixed inset-0 z-[99999] flex flex-col items-center justify-center bg-[#050505] text-white transition-opacity duration-400 ${
         fading ? "opacity-0 pointer-events-none" : "opacity-100"
       }`}
     >
       <div className="relative flex flex-col items-center">
-        {/* Animated SVG Name Signature */}
+        {/* Animated Wordmark in Fraunces (No asterisk) */}
         <div className="relative h-28 w-72 sm:h-36 sm:w-96 flex items-center justify-center">
-          <svg
-            viewBox="0 0 500 150"
-            className="h-full w-full overflow-visible drop-shadow-[0_0_25px_rgba(139,92,246,0.35)]"
-          >
-            <text
-              x="50%"
-              y="55%"
-              textAnchor="middle"
-              dominantBaseline="middle"
-              className="font-cursive text-7xl sm:text-8xl select-none"
-              fill="none"
-              stroke="#8B5CF6"
-              strokeWidth="2.5"
-              strokeDasharray="900"
-              strokeDashoffset="900"
-              style={{
-                animation: "stroke-draw 1.2s ease-out forwards",
-              }}
-            >
-              Satish
-            </text>
-            <text
-              x="50%"
-              y="55%"
-              textAnchor="middle"
-              dominantBaseline="middle"
-              className="font-cursive text-7xl sm:text-8xl select-none"
-              fill="#ffffff"
-              fillOpacity="0"
-              style={{
-                animation: "stroke-fill-in 0.6s ease-in forwards 0.8s",
-              }}
-            >
-              Satish
-            </text>
-          </svg>
+          <div className="font-editorial text-5xl sm:text-7xl font-black tracking-tight select-none flex items-center gap-1 drop-shadow-[0_0_30px_rgba(212,175,55,0.4)]">
+            <span className="text-white">satish</span>
+          </div>
         </div>
 
-        {/* Minimal Progress Line */}
-        <div className="mt-4 h-[2px] w-32 overflow-hidden rounded-full bg-white/20">
+        {/* Minimal Progress Bar in Gold */}
+        <div className="relative mt-2 h-1.5 w-44 overflow-hidden rounded-full border-2 border-black bg-white/10 shadow-solid-sm">
           <div
-            className="h-full w-full bg-purple-500 origin-left"
+            className="h-full w-full origin-left bg-[#D4AF37]"
             style={{
-              animation: "progress-grow 1.2s cubic-bezier(0.65, 0, 0.35, 1) forwards",
+              animation: "progress-grow 1.1s cubic-bezier(0.16, 1, 0.3, 1) forwards",
             }}
           />
         </div>
+
+        <p className="mt-4 font-heading font-black text-xs uppercase tracking-[0.2em] text-[#D4AF37]">
+          ✦ INITIALIZING PORTFOLIO ✦
+        </p>
       </div>
     </div>
   );

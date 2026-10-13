@@ -5,21 +5,21 @@ export default function BrushStrokes() {
       aria-hidden="true"
     >
       <svg
-        className="w-full h-full max-w-[130%] max-h-[130%] -rotate-6 md:-rotate-12 transform-gpu scale-110 md:scale-125 opacity-80 dark:opacity-90 transition-transform duration-700 ease-out"
+        className="w-full h-full max-w-[130%] max-h-[130%] -rotate-6 md:-rotate-12 transform-gpu scale-110 md:scale-125 opacity-85 dark:opacity-95 transition-transform duration-700 ease-out"
         viewBox="0 0 900 650"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
       >
         <defs>
           <linearGradient id="brushGrad1" x1="0%" y1="50%" x2="100%" y2="50%">
-            <stop offset="0%" stopColor="#7C3AED" stopOpacity="0.8" />
-            <stop offset="50%" stopColor="#8B5CF6" stopOpacity="0.95" />
-            <stop offset="100%" stopColor="#A78BFA" stopOpacity="0.9" />
+            <stop offset="0%" stopColor="#B89320" stopOpacity="0.85" />
+            <stop offset="50%" stopColor="#D4AF37" stopOpacity="0.95" />
+            <stop offset="100%" stopColor="#F5D061" stopOpacity="0.9" />
           </linearGradient>
           <linearGradient id="brushGrad2" x1="0%" y1="50%" x2="100%" y2="50%">
-            <stop offset="0%" stopColor="#6D28D9" stopOpacity="0.85" />
-            <stop offset="60%" stopColor="#8B5CF6" stopOpacity="0.95" />
-            <stop offset="100%" stopColor="#C4B5FD" stopOpacity="0.9" />
+            <stop offset="0%" stopColor="#8C6F14" stopOpacity="0.85" />
+            <stop offset="60%" stopColor="#D4AF37" stopOpacity="0.95" />
+            <stop offset="100%" stopColor="#F5D061" stopOpacity="0.9" />
           </linearGradient>
         </defs>
         <ellipse
@@ -27,7 +27,7 @@ export default function BrushStrokes() {
           cy="330"
           rx="260"
           ry="170"
-          className="fill-purple-500/10 dark:fill-purple-500/25 blur-3xl"
+          className="fill-amber-500/15 dark:fill-amber-400/20 blur-3xl"
         />
         <path
           d="M 60,340 C 140,310 240,290 350,260 C 450,230 600,170 760,110 C 830,85 890,65 895,72 C 890,85 820,135 720,195 C 610,260 480,315 370,345 C 270,370 170,390 70,375 C 55,372 45,350 60,340 Z"
@@ -46,10 +46,10 @@ export default function BrushStrokes() {
           fill="url(#brushGrad2)"
           opacity="0.8"
         />
-        <circle cx="875" cy="55" r="4" fill="#A78BFA" opacity="0.9" />
-        <circle cx="895" cy="90" r="3" fill="#8B5CF6" opacity="0.8" />
-        <circle cx="850" cy="180" r="4.5" fill="#C4B5FD" opacity="0.85" />
-        <circle cx="100" cy="355" r="3.5" fill="#8B5CF6" opacity="0.75" />
+        <circle cx="875" cy="55" r="4" fill="#F5D061" opacity="0.9" />
+        <circle cx="895" cy="90" r="3" fill="#D4AF37" opacity="0.8" />
+        <circle cx="850" cy="180" r="4.5" fill="#E7C84D" opacity="0.85" />
+        <circle cx="100" cy="355" r="3.5" fill="#D4AF37" opacity="0.9" />
       </svg>
     </div>
   );

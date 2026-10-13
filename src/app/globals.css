@@ -2,6 +2,77 @@
 @tailwind components;
 @tailwind utilities;
 
+:root {
+  --app-bg: #ffffff;
+  --app-text: #050505;
+  --color-gold: #D4AF37;
+  --color-gold-light: #F5D061;
+  --color-gold-dark: #B89320;
+  --color-black: #050505;
+}
+
+body {
+  font-family: var(--font-jakarta, "Plus Jakarta Sans", system-ui, sans-serif);
+}
+
+.font-editorial, .font-fraunces {
+  font-family: Fraunces, Georgia, serif !important;
+}
+
+.font-heading {
+  font-family: Outfit, system-ui, sans-serif !important;
+  letter-spacing: -0.02em;
+}
+
+/* Custom Solid Borders & Shadows (Gold & Black System) */
+.shadow-solid {
+  box-shadow: 0 4px 0 #000000;
+}
+.shadow-solid-sm {
+  box-shadow: 0 3px 0 #000000;
+}
+.shadow-solid-lg {
+  box-shadow: 0 6px 0 #000000;
+}
+
+:is(.dark) .shadow-solid {
+  box-shadow: 0 4px 0 #D4AF37, 0 0 0 1px rgba(212, 175, 55, 0.25);
+}
+:is(.dark) .shadow-solid-sm {
+  box-shadow: 0 3px 0 #D4AF37, 0 0 0 1px rgba(212, 175, 55, 0.25);
+}
+:is(.dark) .shadow-solid-lg {
+  box-shadow: 0 6px 0 #D4AF37, 0 0 0 1px rgba(212, 175, 55, 0.25);
+}
+
+/* Hover bounce effect for buttons */
+.btn-neo {
+  border: 2px solid #000000;
+  box-shadow: 0 4px 0 #000000;
+  transition: all 0.15s ease;
+}
+.btn-neo:hover {
+  transform: translateY(2px);
+  box-shadow: 0 2px 0 #000000;
+}
+.btn-neo:active {
+  transform: translateY(4px);
+  box-shadow: 0 0 0 #000000;
+}
+
+:is(.dark) .btn-neo {
+  border: 2px solid #D4AF37;
+  box-shadow: 0 4px 0 #D4AF37;
+}
+:is(.dark) .btn-neo:hover {
+  transform: translateY(2px);
+  box-shadow: 0 2px 0 #D4AF37;
+}
+:is(.dark) .btn-neo:active {
+  transform: translateY(4px);
+  box-shadow: 0 0 0 #D4AF37;
+}
+
 /* ========================= BASE ========================= */
 html {
   scroll-behavior: smooth;
@@ -9,12 +80,12 @@ html {
 }
 
 ::selection {
-  background-color: #0a0a0a;
-  color: #fafafa;
+  background-color: #D4AF37;
+  color: #000000;
 }
 :is(.dark) ::selection {
-  background-color: #fafafa;
-  color: #0a0a0a;
+  background-color: #D4AF37;
+  color: #000000;
 }
 
 /* ========================= SCROLLBAR ========================= */
@@ -43,13 +114,13 @@ html {
   padding: 8px 0;
   --web-strand-color: rgba(0, 0, 0, 0.55);
   --web-strand-color-light: rgba(0, 0, 0, 0.2);
-  --spider-glow: rgba(180, 0, 0, 0.6);
+  --spider-glow: rgba(212, 175, 55, 0.7);
 }
 
 :is(.dark) .spider-scroll-sidebar {
   --web-strand-color: rgba(255, 255, 255, 0.5);
   --web-strand-color-light: rgba(255, 255, 255, 0.15);
-  --spider-glow: rgba(255, 80, 80, 0.6);
+  --spider-glow: rgba(245, 208, 97, 0.8);
 }
 
 .spider-scroll-sidebar .gwen-img,
@@ -159,7 +230,7 @@ html {
 
 /* ========================= UTILITIES ========================= */
 .text-gradient {
-  background: linear-gradient(135deg, #8B5CF6, #a78bfa);
+  background: linear-gradient(135deg, #D4AF37, #F5D061);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;

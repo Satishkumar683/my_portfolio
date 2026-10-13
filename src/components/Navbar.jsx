@@ -9,28 +9,34 @@ export default function Navbar() {
 
   return (
     <>
-      <header className="fixed top-0 left-0 right-0 z-40 flex items-center justify-between px-6 py-4 md:px-12 md:pr-24 lg:pr-28 backdrop-blur-md bg-white/70 dark:bg-[#0a0a0d]/70 border-b border-neutral-200/50 dark:border-neutral-800/50 transition-colors">
-        {/* Brand Logo */}
+      <header className="fixed top-0 left-0 right-0 z-40 flex items-center justify-between px-6 py-4 md:px-12 md:pr-24 lg:pr-28 backdrop-blur-md bg-white/90 dark:bg-[#050505]/90 border-b-2 border-black dark:border-[#D4AF37]/40 transition-colors">
+        {/* Brand Wordmark (No asterisk) */}
         <a
           href="#hero"
-          className="group flex items-center gap-2 text-lg sm:text-xl font-bold tracking-tight"
+          className="group flex items-center gap-1 font-editorial text-2xl sm:text-3xl font-extrabold tracking-tight text-neutral-900 dark:text-white hover:opacity-90 transition-opacity"
           aria-label="Home"
         >
-          <span className="font-mono text-purple-600 dark:text-purple-400">&lt;</span>
-          <span className="font-extrabold tracking-wider">SK</span>
-          <span className="font-mono text-purple-600 dark:text-purple-400">/&gt;</span>
+          <span>satish</span>
         </a>
 
-        {/* Right side controls: Theme toggle + Menu button */}
+        {/* Center Pill: Gold & Black Typographical Badge */}
+        <div className="hidden lg:flex items-center gap-2 px-4 py-1.5 rounded-full border-2 border-black dark:border-[#D4AF37] bg-[#D4AF37] text-black text-xs font-heading font-black shadow-solid-sm">
+          <span>✦</span>
+          <span className="tracking-wide uppercase">NIT JAMSHEDPUR CSE</span>
+          <span>✦</span>
+        </div>
+
+        {/* Right side controls: Theme toggle + Gold Menu button */}
         <div className="flex items-center gap-3 sm:gap-4">
           <ThemeToggle />
 
           <button
             onClick={() => setMenuOpen(true)}
-            className="group relative flex h-9 items-center justify-center rounded-full bg-neutral-900 px-5 sm:px-6 text-[11px] sm:text-xs font-semibold uppercase tracking-widest text-white shadow-md hover:scale-105 hover:bg-purple-600 transition-all dark:bg-neutral-100 dark:text-neutral-900 dark:hover:bg-purple-400"
+            className="btn-neo flex h-10 items-center justify-center gap-1.5 rounded-full bg-[#D4AF37] px-5 sm:px-6 text-xs font-heading font-black uppercase tracking-wider text-black hover:bg-[#B89320] transition-all"
             aria-label="Open navigation menu"
           >
             <span>MENU</span>
+            <span className="text-xs font-black">✦</span>
           </button>
         </div>
       </header>

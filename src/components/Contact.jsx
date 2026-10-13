@@ -26,136 +26,134 @@ export default function Contact() {
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-start">
         {/* Left Column: Direct Contact Info */}
         <div className="lg:col-span-5">
-          <span className="text-xs font-mono font-semibold tracking-widest uppercase text-purple-600 dark:text-purple-400">
-            Get In Touch
+          <span className="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full border-2 border-black dark:border-[#D4AF37] bg-[#D4AF37] text-black text-xs font-heading font-black shadow-solid-sm uppercase">
+            <span>✦</span> Get In Touch <span>✦</span>
           </span>
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-display font-extrabold tracking-tight mt-1 mb-4 text-neutral-900 dark:text-white">
-            Let&apos;s Build Something <span className="text-purple-600 dark:text-purple-400">Exceptional</span>
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-heading font-extrabold tracking-tight mt-3 mb-4 text-neutral-900 dark:text-white">
+            Let&apos;s Build Something <span className="text-[#D4AF37] font-editorial italic font-normal">Exceptional</span>
           </h2>
-          <p className="text-neutral-600 dark:text-neutral-400 text-sm leading-relaxed mb-8">
+          <p className="text-neutral-600 dark:text-neutral-300 text-sm sm:text-base leading-relaxed mb-8 font-sans">
             Whether you want to discuss algorithmic problem solving, software engineering opportunities, or collaborating on high-impact projects — my inbox is always open.
           </p>
 
           <div className="space-y-4">
             <a
               href={`mailto:${PERSONAL_INFO.email}`}
-              className="flex items-center gap-4 p-4 rounded-2xl bg-white dark:bg-[#121217] border border-neutral-200/80 dark:border-neutral-800/80 hover:border-purple-500 transition-colors shadow-sm group"
+              className="flex items-center gap-4 p-4 rounded-2xl bg-white dark:bg-[#050505] border-2 border-black dark:border-[#D4AF37]/40 shadow-solid-sm hover:translate-x-1 transition-transform group"
             >
-              <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-purple-500/10 border border-purple-500/20 text-purple-600 dark:text-purple-400 group-hover:scale-105 transition-transform">
-                <Mail className="w-5 h-5" />
+              <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-[#D4AF37] border-2 border-black shadow-solid-sm text-black">
+                <Mail className="w-5 h-5" strokeWidth={2.3} />
               </div>
               <div>
-                <span className="text-[11px] font-mono font-semibold text-neutral-400 uppercase tracking-wider block">Email</span>
-                <span className="font-bold text-sm text-neutral-900 dark:text-white">{PERSONAL_INFO.email}</span>
+                <span className="text-[11px] font-heading font-bold text-neutral-500 uppercase tracking-wider block">Email Address</span>
+                <span className="font-heading font-bold text-sm text-neutral-900 dark:text-white">{PERSONAL_INFO.email}</span>
               </div>
             </a>
 
             <a
               href={`tel:${PERSONAL_INFO.phone}`}
-              className="flex items-center gap-4 p-4 rounded-2xl bg-white dark:bg-[#121217] border border-neutral-200/80 dark:border-neutral-800/80 hover:border-purple-500 transition-colors shadow-sm group"
+              className="flex items-center gap-4 p-4 rounded-2xl bg-white dark:bg-[#050505] border-2 border-black dark:border-[#D4AF37]/40 shadow-solid-sm hover:translate-x-1 transition-transform group"
             >
-              <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-purple-500/10 border border-purple-500/20 text-purple-600 dark:text-purple-400 group-hover:scale-105 transition-transform">
-                <Phone className="w-5 h-5" />
+              <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-[#D4AF37] border-2 border-black shadow-solid-sm text-black">
+                <Phone className="w-5 h-5" strokeWidth={2.3} />
               </div>
               <div>
-                <span className="text-[11px] font-mono font-semibold text-neutral-400 uppercase tracking-wider block">Phone</span>
-                <span className="font-bold text-sm text-neutral-900 dark:text-white">{PERSONAL_INFO.phone}</span>
+                <span className="text-[11px] font-heading font-bold text-neutral-500 uppercase tracking-wider block">Phone &amp; WhatsApp</span>
+                <span className="font-heading font-bold text-sm text-neutral-900 dark:text-white">{PERSONAL_INFO.phone}</span>
               </div>
             </a>
 
-            <div className="flex items-center gap-4 p-4 rounded-2xl bg-white dark:bg-[#121217] border border-neutral-200/80 dark:border-neutral-800/80 shadow-sm">
-              <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-purple-500/10 border border-purple-500/20 text-purple-600 dark:text-purple-400">
-                <MapPin className="w-5 h-5" />
+            <div className="flex items-center gap-4 p-4 rounded-2xl bg-white dark:bg-[#050505] border-2 border-black dark:border-[#D4AF37]/40 shadow-solid-sm">
+              <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-[#D4AF37] border-2 border-black shadow-solid-sm text-black">
+                <MapPin className="w-5 h-5" strokeWidth={2.3} />
               </div>
               <div>
-                <span className="text-[11px] font-mono font-semibold text-neutral-400 uppercase tracking-wider block">Location</span>
-                <span className="font-bold text-sm text-neutral-900 dark:text-white">NIT Jamshedpur, Jharkhand, India</span>
+                <span className="text-[11px] font-heading font-bold text-neutral-500 uppercase tracking-wider block">Location</span>
+                <span className="font-heading font-bold text-sm text-neutral-900 dark:text-white">NIT Jamshedpur, Jharkhand, India</span>
               </div>
             </div>
           </div>
         </div>
 
-        {/* Right Column: Clean Form */}
+        {/* Right Column: Interactive Contact Form with Gold & Black Neo-Brutalist Border & Shadows */}
         <div className="lg:col-span-7">
           <form
             onSubmit={handleSubmit}
-            className="rounded-[2.5rem] bg-white dark:bg-[#121217] border border-neutral-200/80 dark:border-neutral-800/80 p-8 sm:p-10 shadow-xl"
+            className="rounded-[2.5rem] bg-white dark:bg-[#050505] border-2 border-black dark:border-[#D4AF37]/40 p-8 sm:p-10 shadow-solid space-y-6"
           >
-            <h3 className="text-xl sm:text-2xl font-bold mb-6 text-neutral-900 dark:text-white tracking-tight">
-              Send a Message
-            </h3>
-
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-4">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
               <div>
-                <label className="block text-xs font-mono font-semibold uppercase tracking-wider text-neutral-500 mb-2">
-                  Your Name *
+                <label htmlFor="name" className="block text-xs font-heading font-bold text-neutral-700 dark:text-neutral-300 uppercase tracking-wider mb-2">
+                  Your Name
                 </label>
                 <input
+                  id="name"
                   type="text"
                   required
                   value={formState.name}
                   onChange={(e) => setFormState({ ...formState, name: e.target.value })}
                   placeholder="Satish Kumar"
-                  className="w-full rounded-2xl border border-neutral-200 dark:border-neutral-800 bg-neutral-50 dark:bg-neutral-900/80 px-4 py-3 text-sm text-neutral-900 dark:text-white placeholder-neutral-400 focus:border-purple-500 focus:outline-none focus:ring-1 focus:ring-purple-500 transition-colors"
+                  className="w-full px-4 py-3 rounded-xl bg-[#fdfdfd] dark:bg-[#0a0a0a] border-2 border-black/80 dark:border-[#D4AF37]/40 text-neutral-900 dark:text-white placeholder-neutral-400 focus:outline-none focus:border-[#D4AF37] text-sm font-sans"
                 />
               </div>
 
               <div>
-                <label className="block text-xs font-mono font-semibold uppercase tracking-wider text-neutral-500 mb-2">
-                  Your Email *
+                <label htmlFor="email" className="block text-xs font-heading font-bold text-neutral-700 dark:text-neutral-300 uppercase tracking-wider mb-2">
+                  Email Address
                 </label>
                 <input
+                  id="email"
                   type="email"
                   required
                   value={formState.email}
                   onChange={(e) => setFormState({ ...formState, email: e.target.value })}
                   placeholder="you@domain.com"
-                  className="w-full rounded-2xl border border-neutral-200 dark:border-neutral-800 bg-neutral-50 dark:bg-neutral-900/80 px-4 py-3 text-sm text-neutral-900 dark:text-white placeholder-neutral-400 focus:border-purple-500 focus:outline-none focus:ring-1 focus:ring-purple-500 transition-colors"
+                  className="w-full px-4 py-3 rounded-xl bg-[#fdfdfd] dark:bg-[#0a0a0a] border-2 border-black/80 dark:border-[#D4AF37]/40 text-neutral-900 dark:text-white placeholder-neutral-400 focus:outline-none focus:border-[#D4AF37] text-sm font-sans"
                 />
               </div>
             </div>
 
-            <div className="mb-4">
-              <label className="block text-xs font-mono font-semibold uppercase tracking-wider text-neutral-500 mb-2">
+            <div>
+              <label htmlFor="subject" className="block text-xs font-heading font-bold text-neutral-700 dark:text-neutral-300 uppercase tracking-wider mb-2">
                 Subject
               </label>
               <input
+                id="subject"
                 type="text"
                 value={formState.subject}
                 onChange={(e) => setFormState({ ...formState, subject: e.target.value })}
-                placeholder="Software Engineering Collaboration"
-                className="w-full rounded-2xl border border-neutral-200 dark:border-neutral-800 bg-neutral-50 dark:bg-neutral-900/80 px-4 py-3 text-sm text-neutral-900 dark:text-white placeholder-neutral-400 focus:border-purple-500 focus:outline-none focus:ring-1 focus:ring-purple-500 transition-colors"
+                placeholder="Software Engineering Project or Role"
+                className="w-full px-4 py-3 rounded-xl bg-[#fdfdfd] dark:bg-[#0a0a0a] border-2 border-black/80 dark:border-[#D4AF37]/40 text-neutral-900 dark:text-white placeholder-neutral-400 focus:outline-none focus:border-[#D4AF37] text-sm font-sans"
               />
             </div>
 
-            <div className="mb-6">
-              <label className="block text-xs font-mono font-semibold uppercase tracking-wider text-neutral-500 mb-2">
-                Message *
+            <div>
+              <label htmlFor="message" className="block text-xs font-heading font-bold text-neutral-700 dark:text-neutral-300 uppercase tracking-wider mb-2">
+                Message
               </label>
               <textarea
+                id="message"
                 required
-                rows={5}
+                rows={4}
                 value={formState.message}
                 onChange={(e) => setFormState({ ...formState, message: e.target.value })}
-                placeholder="Let's build something great..."
-                className="w-full rounded-2xl border border-neutral-200 dark:border-neutral-800 bg-neutral-50 dark:bg-neutral-900/80 px-4 py-3 text-sm text-neutral-900 dark:text-white placeholder-neutral-400 focus:border-purple-500 focus:outline-none focus:ring-1 focus:ring-purple-500 transition-colors resize-none"
+                placeholder="Hi Satish, I would love to connect with you regarding..."
+                className="w-full px-4 py-3 rounded-xl bg-[#fdfdfd] dark:bg-[#0a0a0a] border-2 border-black/80 dark:border-[#D4AF37]/40 text-neutral-900 dark:text-white placeholder-neutral-400 focus:outline-none focus:border-[#D4AF37] text-sm resize-none font-sans"
               />
             </div>
 
             {status.message && (
               <div
-                className={`mb-4 rounded-xl p-3 text-xs font-semibold flex items-center gap-2 ${
+                className={`p-3.5 rounded-xl border-2 flex items-center gap-2.5 text-xs font-heading font-bold ${
                   status.state === "success"
-                    ? "bg-emerald-500/10 text-emerald-500 border border-emerald-500/20"
-                    : status.state === "error"
-                    ? "bg-rose-500/10 text-rose-500 border border-rose-500/20"
-                    : "bg-purple-500/10 text-purple-500"
+                    ? "bg-[#D4AF37]/15 border-[#D4AF37] text-black dark:text-[#F5D061]"
+                    : "bg-red-500/15 border-red-500 text-red-600 dark:text-red-400"
                 }`}
               >
                 {status.state === "success" ? (
-                  <CheckCircle2 className="w-4 h-4 shrink-0" />
+                  <CheckCircle2 className="w-4 h-4 shrink-0 text-[#D4AF37]" strokeWidth={2.4} />
                 ) : (
-                  <AlertCircle className="w-4 h-4 shrink-0" />
+                  <AlertCircle className="w-4 h-4 shrink-0" strokeWidth={2.4} />
                 )}
                 <span>{status.message}</span>
               </div>
@@ -164,10 +162,10 @@ export default function Contact() {
             <button
               type="submit"
               disabled={status.state === "loading"}
-              className="inline-flex items-center justify-center gap-2 w-full py-4 rounded-full bg-neutral-950 text-white dark:bg-white dark:text-neutral-950 font-bold text-xs sm:text-sm uppercase tracking-widest transition-all shadow-lg hover:bg-purple-600 dark:hover:bg-purple-400 dark:hover:text-neutral-950 hover:scale-[1.01] active:scale-[0.99] disabled:opacity-50"
+              className="btn-neo w-full flex items-center justify-center gap-2 py-3.5 rounded-xl bg-[#D4AF37] text-black font-heading font-black text-xs sm:text-sm uppercase tracking-wider hover:bg-[#B89320] transition-all disabled:opacity-50"
             >
-              <Send className="w-4 h-4" />
-              <span>{status.state === "loading" ? "Sending..." : "Send Message"}</span>
+              <span>{status.state === "loading" ? "Dispatching..." : "Send Message"}</span>
+              <Send className="w-4 h-4 text-black" strokeWidth={2.4} />
             </button>
           </form>
         </div>

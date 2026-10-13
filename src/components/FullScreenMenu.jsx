@@ -31,54 +31,59 @@ export default function FullScreenMenu({ isOpen, onClose }) {
 
   return (
     <div
-      className="fixed inset-0 z-[100] flex flex-col lg:flex-row bg-[#0d0d11] text-white animate-in fade-in duration-300"
+      className="fixed inset-0 z-[100] flex flex-col lg:flex-row bg-[#050505] text-white animate-in fade-in duration-300"
       aria-modal="true"
       role="dialog"
     >
-      {/* Left Panel: Big Creative Editorial Greeting (like Rohit's) */}
-      <div className="hidden lg:flex w-full lg:w-[58%] lg:h-full bg-white dark:bg-neutral-100 lg:rounded-r-[40px] p-8 md:p-14 lg:p-20 flex-col justify-center items-center relative overflow-hidden text-black z-10 shadow-2xl">
+      {/* Left Panel: Big Creative Editorial Greeting (Gold & Black) */}
+      <div className="hidden lg:flex w-full lg:w-[58%] lg:h-full bg-white dark:bg-[#0a0a0a] lg:rounded-r-[48px] p-8 md:p-14 lg:p-20 flex-col justify-center items-center relative overflow-hidden text-neutral-900 dark:text-white z-10 border-r-2 border-black dark:border-[#D4AF37]/40 shadow-solid-lg">
         <div className="w-full flex flex-col items-center justify-center text-center">
-          <div className="text-[clamp(1.5rem,2.8vw,3rem)] font-display font-extrabold normal-case leading-tight tracking-tight flex flex-col items-center gap-4">
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 mb-6 rounded-full border-2 border-black dark:border-[#D4AF37] bg-[#D4AF37] text-black text-xs font-heading font-black shadow-solid-sm">
+            <span>✦</span> SATISH KUMAR PORTFOLIO <span>✦</span>
+          </div>
+
+          <div className="text-[clamp(1.5rem,2.8vw,3.2rem)] font-heading font-extrabold normal-case leading-tight tracking-tight flex flex-col items-center gap-3">
             <div className="flex items-center justify-center gap-2">
               HELLO, I&apos;M{" "}
-              <span className="font-cursive font-normal text-purple-600 text-[clamp(2rem,4.5vw,4.5rem)] transform -rotate-3">
+              <span className="font-editorial italic font-black text-[#D4AF37] text-[clamp(2.2rem,4.5vw,4.8rem)]">
                 Satish
               </span>
             </div>
-            <div className="flex items-center justify-center gap-3 flex-wrap text-neutral-800">
+            <div className="flex items-center justify-center gap-3 flex-wrap">
               A COMPETITIVE PROGRAMMER
             </div>
-            <div className="flex items-center justify-center gap-3 flex-wrap text-neutral-800">
+            <div className="flex items-center justify-center gap-3 flex-wrap text-black dark:text-[#F5D061]">
               &amp; FULL-STACK DEVELOPER
             </div>
-            <div className="flex items-center justify-center gap-3 flex-wrap">
+            <div className="flex items-center justify-center gap-2 flex-wrap">
               AT{" "}
-              <span className="font-cursive font-normal text-purple-600 text-[clamp(2rem,4vw,4rem)] transform -rotate-1">
+              <span className="font-editorial font-black underline decoration-[#D4AF37] decoration-4 underline-offset-4">
                 NIT Jamshedpur
               </span>
             </div>
           </div>
-          <p className="mt-8 text-neutral-600 max-w-md text-sm md:text-base leading-relaxed">
+
+          <p className="mt-8 text-neutral-600 dark:text-neutral-300 max-w-md text-sm md:text-base leading-relaxed font-sans">
             Crafting scalable web systems, data-driven ML applications, and solving algorithmic problems at scale.
           </p>
         </div>
       </div>
 
       {/* Right Panel: Navigation Sitemap & Links */}
-      <div className="w-full lg:w-[42%] h-full bg-[#0d0d11] p-8 md:p-14 lg:p-20 flex flex-col justify-between relative z-0">
-        {/* Close Button */}
+      <div className="w-full lg:w-[42%] h-full bg-[#050505] p-8 md:p-14 lg:p-20 flex flex-col justify-between relative z-0">
+        {/* Close Button with Gold & Black styling */}
         <button
           onClick={onClose}
-          className="absolute top-6 right-6 lg:top-10 lg:right-10 flex h-11 w-11 items-center justify-center rounded-full border border-white/20 text-white hover:bg-white/10 hover:scale-105 transition-all"
+          className="btn-neo absolute top-6 right-6 lg:top-10 lg:right-10 flex h-11 w-11 items-center justify-center rounded-full bg-[#D4AF37] text-black hover:bg-[#B89320] transition-all"
           aria-label="Close menu"
         >
-          <X className="w-5 h-5" />
+          <X className="w-5 h-5 text-black" strokeWidth={2.4} />
         </button>
 
         <div className="space-y-8 lg:space-y-12 pt-8">
           <div>
-            <h4 className="text-[11px] font-mono uppercase tracking-[0.25em] text-white/50 mb-4 font-semibold">
-              Sitemap
+            <h4 className="text-xs font-heading font-black uppercase tracking-[0.2em] text-[#D4AF37] mb-4">
+              ✦ Navigation Sitemap ✦
             </h4>
             <div className="flex flex-col gap-2.5">
               {navLinks.map((item) => (
@@ -86,7 +91,7 @@ export default function FullScreenMenu({ isOpen, onClose }) {
                   <a
                     href={item.href}
                     onClick={onClose}
-                    className="text-2xl sm:text-3xl lg:text-4xl font-display font-bold tracking-tight text-white hover:text-purple-400 transition-colors inline-block"
+                    className="text-2xl sm:text-3xl lg:text-4xl font-editorial font-black tracking-tight text-white hover:text-[#D4AF37] transition-colors inline-block"
                   >
                     {item.label}
                   </a>
@@ -96,67 +101,61 @@ export default function FullScreenMenu({ isOpen, onClose }) {
           </div>
 
           <div>
-            <h4 className="text-[11px] font-mono uppercase tracking-[0.25em] text-white/50 mb-3 font-semibold">
-              Profiles &amp; Social
+            <h4 className="text-xs font-heading font-black uppercase tracking-[0.2em] text-[#D4AF37] mb-3">
+              ✦ Profiles &amp; Social ✦
             </h4>
-            <div className="flex flex-wrap gap-x-6 gap-y-2 text-xs font-bold font-mono tracking-[0.15em] uppercase">
+            <div className="flex flex-wrap gap-x-6 gap-y-2 text-xs font-heading font-extrabold tracking-wider uppercase">
               <a
                 href={PERSONAL_INFO.socials.github}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-white hover:text-purple-400 transition-colors inline-flex items-center gap-1"
+                className="text-white hover:text-[#D4AF37] transition-colors inline-flex items-center gap-1"
               >
                 <span>GitHub</span>
-                <ArrowUpRight className="w-3 h-3" />
+                <ArrowUpRight className="w-3.5 h-3.5" strokeWidth={2.2} />
               </a>
               <a
                 href={PERSONAL_INFO.socials.linkedin}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-white hover:text-purple-400 transition-colors inline-flex items-center gap-1"
+                className="text-white hover:text-[#D4AF37] transition-colors inline-flex items-center gap-1"
               >
                 <span>LinkedIn</span>
-                <ArrowUpRight className="w-3 h-3" />
+                <ArrowUpRight className="w-3.5 h-3.5" strokeWidth={2.2} />
               </a>
               <a
                 href={PERSONAL_INFO.socials.codeforces}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-white hover:text-purple-400 transition-colors inline-flex items-center gap-1"
+                className="text-white hover:text-[#D4AF37] transition-colors inline-flex items-center gap-1"
               >
                 <span>Codeforces</span>
-                <ArrowUpRight className="w-3 h-3" />
+                <ArrowUpRight className="w-3.5 h-3.5" strokeWidth={2.2} />
               </a>
               <a
                 href={PERSONAL_INFO.socials.leetcode}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-white hover:text-purple-400 transition-colors inline-flex items-center gap-1"
+                className="text-white hover:text-[#D4AF37] transition-colors inline-flex items-center gap-1"
               >
                 <span>LeetCode</span>
-                <ArrowUpRight className="w-3 h-3" />
+                <ArrowUpRight className="w-3.5 h-3.5" strokeWidth={2.2} />
               </a>
               <a
                 href={`mailto:${PERSONAL_INFO.email}`}
-                className="text-white hover:text-purple-400 transition-colors inline-flex items-center gap-1"
+                className="text-white hover:text-[#D4AF37] transition-colors inline-flex items-center gap-1"
               >
                 <span>Email</span>
-                <ArrowUpRight className="w-3 h-3" />
+                <ArrowUpRight className="w-3.5 h-3.5" strokeWidth={2.2} />
               </a>
             </div>
           </div>
         </div>
 
-        <div className="flex items-center justify-between pt-6 border-t border-white/10 text-xs text-white/60 font-mono">
-          <span>{PERSONAL_INFO.phone}</span>
-          <a
-            href={PERSONAL_INFO.resumePdf}
-            download="Satish-Kumar-Resume.pdf"
-            className="font-bold uppercase tracking-wider text-purple-400 hover:underline inline-flex items-center gap-1"
-          >
-            <span>Resume</span>
-            <ArrowUpRight className="w-3 h-3" />
-          </a>
+        {/* Footer in Drawer */}
+        <div className="pt-6 border-t-2 border-white/10 flex items-center justify-between text-xs font-heading font-bold text-neutral-400">
+          <span>&copy; {new Date().getFullYear()} Satish Kumar</span>
+          <span className="text-[#D4AF37]">✦ NIT Jamshedpur</span>
         </div>
       </div>
     </div>

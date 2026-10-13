@@ -2,7 +2,6 @@
 
 import { useTheme } from "next-themes";
 import { useEffect, useState } from "react";
-import { Sun, Moon } from "lucide-react";
 
 export default function ThemeToggle() {
   const { theme, setTheme } = useTheme();
@@ -14,7 +13,7 @@ export default function ThemeToggle() {
 
   if (!mounted) {
     return (
-      <div className="h-9 w-9 rounded-full border border-neutral-300 bg-neutral-100 dark:border-neutral-800 dark:bg-neutral-900" />
+      <div className="h-10 w-10 rounded-full border-2 border-black bg-white shadow-solid-sm dark:border-[#D4AF37] dark:bg-[#050505]" />
     );
   }
 
@@ -24,13 +23,33 @@ export default function ThemeToggle() {
     <button
       type="button"
       onClick={() => setTheme(isDark ? "light" : "dark")}
-      className="relative flex h-9 w-9 items-center justify-center rounded-full border border-neutral-300/80 bg-white/80 text-neutral-700 shadow-sm backdrop-blur-md transition-all hover:scale-105 hover:border-purple-500 hover:text-purple-600 dark:border-neutral-800 dark:bg-neutral-900/80 dark:text-neutral-300 dark:hover:border-purple-400 dark:hover:text-purple-400"
+      className="btn-neo relative flex h-10 w-10 items-center justify-center rounded-full bg-white text-black transition-all dark:bg-[#050505] dark:text-[#D4AF37]"
       aria-label="Toggle theme"
+      title={isDark ? "Switch to Light Mode" : "Switch to Dark Mode"}
     >
       {isDark ? (
-        <Sun className="h-4 w-4 text-amber-400 transition-transform duration-300 rotate-0 hover:rotate-90" />
+        // Sun Icon in Gold
+        <svg
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="2.3"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          className="w-5 h-5 text-[#D4AF37]"
+        >
+          <circle cx="12" cy="12" r="4" fill="#D4AF37" fillOpacity="0.25" />
+          <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41" />
+        </svg>
       ) : (
-        <Moon className="h-4 w-4 text-neutral-700 transition-transform duration-300 rotate-0 hover:-rotate-45" />
+        // Moon Icon in Black
+        <svg viewBox="0 0 24 24" fill="currentColor" className="w-5 h-5 text-black">
+          <path
+            fillRule="evenodd"
+            d="M9.528 1.718a.75.75 0 0 1 .162.819A8.97 8.97 0 0 0 9 6a9 9 0 0 0 9 9 8.97 8.97 0 0 0 3.463-.69.75.75 0 0 1 .981.98 10.503 10.503 0 0 1-9.694 6.46c-5.799 0-10.5-4.7-10.5-10.5 0-4.368 2.667-8.112 6.46-9.694a.75.75 0 0 1 .818.162Z"
+            clipRule="evenodd"
+          />
+        </svg>
       )}
     </button>
   );

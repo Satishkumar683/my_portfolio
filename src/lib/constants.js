@@ -50,7 +50,7 @@ export const EDUCATION = [
     institution: "St. Michael Anglo Indian School",
     degree: "Secondary School (Class X)",
     score: "94.8%",
-    period: "2023",
+    period: "2021",
     location: "Jharkhand, India",
     icon: "🏫",
   },

@@ -16,7 +16,8 @@ export default function Contact() {
     }
     setStatus({ state: "loading", message: "Dispatching message to Satish..." });
 
-    const accessKey = process.env.NEXT_PUBLIC_WEB3FORMS_KEY;
+    const accessKey =
+      process.env.NEXT_PUBLIC_WEB3FORMS_KEY || "599c7048-3fa8-4e58-bb55-aefdcd1c6f5b";
 
     if (accessKey) {
       try {

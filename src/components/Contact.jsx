@@ -8,17 +8,72 @@ export default function Contact() {
   const [formState, setFormState] = useState({ name: "", email: "", subject: "", message: "" });
   const [status, setStatus] = useState({ state: "idle", message: "" });
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     if (!formState.name || !formState.email || !formState.message) {
       setStatus({ state: "error", message: "Please fill out all required fields." });
       return;
     }
-    setStatus({ state: "loading", message: "Sending message..." });
-    setTimeout(() => {
-      setStatus({ state: "success", message: "Thank you! Your message has been received." });
-      setFormState({ name: "", email: "", subject: "", message: "" });
-    }, 1200);
+    setStatus({ state: "loading", message: "Dispatching message to Satish..." });
+
+    const accessKey = process.env.NEXT_PUBLIC_WEB3FORMS_KEY;
+
+    if (accessKey) {
+      try {
+        const response = await fetch("https://api.web3forms.com/submit", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            Accept: "application/json",
+          },
+          body: JSON.stringify({
+            access_key: accessKey,
+            name: formState.name,
+            email: formState.email,
+            subject: formState.subject || `New Portfolio Message from ${formState.name}`,
+            message: formState.message,
+            from_name: "Portfolio Contact Form",
+          }),
+        });
+        const result = await response.json();
+        if (result.success) {
+          setStatus({
+            state: "success",
+            message: `Message sent successfully! Satish will reply to ${formState.email} shortly.`,
+          });
+          setFormState({ name: "", email: "", subject: "", message: "" });
+          return;
+        }
+      } catch (err) {
+        console.warn("API submission error, falling back to direct email:", err);
+      }
+    }
+
+    // Direct fallback: opens pre-filled email to satishkumarhp1718@gmail.com
+    const subject = encodeURIComponent(
+      formState.subject || `Inquiry from ${formState.name} via Portfolio`
+    );
+    const body = encodeURIComponent(
+      `From: ${formState.name} (${formState.email})\n\nMessage:\n${formState.message}`
+    );
+    const mailtoUrl = `mailto:${PERSONAL_INFO.email}?subject=${subject}&body=${body}`;
+    window.location.href = mailtoUrl;
+
+    setStatus({
+      state: "success",
+      message: `Opening your email client to send directly to ${PERSONAL_INFO.email}...`,
+    });
+  };
+
+  const handleOpenGmail = () => {
+    const subject = encodeURIComponent(
+      formState.subject || `Inquiry from ${formState.name || "Portfolio Visitor"}`
+    );
+    const body = encodeURIComponent(
+      `From: ${formState.name || "Visitor"} (${formState.email || "No email entered"})\n\nMessage:\n${formState.message || ""}`
+    );
+    const gmailUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=${PERSONAL_INFO.email}&su=${subject}&body=${body}`;
+    window.open(gmailUrl, "_blank");
   };
 
   return (
@@ -159,14 +214,30 @@ export default function Contact() {
               </div>
             )}
 
-            <button
-              type="submit"
-              disabled={status.state === "loading"}
-              className="btn-neo w-full flex items-center justify-center gap-2 py-3.5 rounded-xl bg-[#D4AF37] text-black font-heading font-black text-xs sm:text-sm uppercase tracking-wider hover:bg-[#B89320] transition-all disabled:opacity-50"
-            >
-              <span>{status.state === "loading" ? "Dispatching..." : "Send Message"}</span>
-              <Send className="w-4 h-4 text-black" strokeWidth={2.4} />
-            </button>
+            <div className="flex flex-col sm:flex-row items-center gap-3 pt-1">
+              <button
+                type="submit"
+                disabled={status.state === "loading"}
+                className="btn-neo w-full flex-1 flex items-center justify-center gap-2 py-3.5 rounded-xl bg-[#D4AF37] text-black font-heading font-black text-xs sm:text-sm uppercase tracking-wider hover:bg-[#B89320] transition-all disabled:opacity-50"
+              >
+                <span>{status.state === "loading" ? "Dispatching..." : "Send Message"}</span>
+                <Send className="w-4 h-4 text-black" strokeWidth={2.4} />
+              </button>
+
+              <button
+                type="button"
+                onClick={handleOpenGmail}
+                className="btn-neo w-full sm:w-auto px-5 py-3.5 rounded-xl bg-white dark:bg-[#050505] text-black dark:text-white font-heading font-black text-xs uppercase tracking-wider hover:bg-neutral-100 dark:hover:bg-neutral-900 border-2 border-black dark:border-[#D4AF37] flex items-center justify-center gap-2"
+                title="Open directly in Gmail web"
+              >
+                <Mail className="w-4 h-4 text-[#D4AF37]" strokeWidth={2.4} />
+                <span>Open in Gmail</span>
+              </button>
+            </div>
+
+            <p className="text-[11px] text-center text-neutral-500 dark:text-neutral-400 font-sans">
+              All inquiries route directly to <span className="font-bold text-neutral-800 dark:text-neutral-200">{PERSONAL_INFO.email}</span>
+            </p>
           </form>
         </div>
       </div>
